@@ -1,17 +1,22 @@
 #!/usr/bin/env nextflow
-nextflow.enable.dsl=2 
+nextflow.enable.dsl=2
 
 process sayHello {
-  input: 
-    val x
-  output:
-    stdout
+
   script:
-    """
-    echo '$x world!'
-    """
+  """
+  echo 'Hello, World!'
+  """
+}
+process sayHello2 {
+
+  script:
+  """
+  echo 'Hello, World 2!'
+  """
 }
 
 workflow {
-  Channel.of('Bonjour', 'Ciao', 'Hello', 'Hola') | sayHello | view
+  sayHello()
+  sayHello2()
 }
