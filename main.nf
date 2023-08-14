@@ -16,7 +16,16 @@ process sayHello2 {
   """
 }
 
+process sayHello3 {
+
+  script:
+  """
+  echo 'Hello, World 3!'
+  """
+}
+
 workflow {
   sayHello()
-  sayHello2()
+  sayHello2() 
+  sayHello3()
 }
