@@ -7,25 +7,20 @@ process sayHello {
   """
   echo 'Hello, World!'
   """
-}
-process sayHello2 {
 
+process sayGoodbye {
+  input: 
+    val y
+  output:
+    stdout
   script:
-  """
-  echo 'Hello, World 2!'
-  """
-}
-
-process sayHello3 {
-
-  script:
-  """
-  echo 'Hello, World 3!'
-  """
+    """
+    echo 'Goodbye, $y!'
+    """
 }
 
 workflow {
   sayHello()
-  sayHello2() 
-  sayHello3()
+  sayGoodbye()
+
 }
