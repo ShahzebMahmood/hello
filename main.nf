@@ -7,6 +7,7 @@ process sayHello {
   """
   echo 'Hello, World!'
   """
+}
 
 process sayGoodbye {
   input: 
