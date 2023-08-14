@@ -8,20 +8,15 @@ process sayHello {
   echo 'Hello, World!'
   """
 }
+process sayHello2 {
 
-process sayGoodbye {
-  input: 
-    val y
-  output:
-    stdout
   script:
-    """
-    echo 'Goodbye, $y!'
-    """
+  """
+  echo 'Hello, World 2!'
+  """
 }
 
 workflow {
   sayHello()
-  sayGoodbye()
-
+  sayHello2()
 }
