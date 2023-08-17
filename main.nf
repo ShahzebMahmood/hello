@@ -53,19 +53,6 @@ process TEST_INPUT {
     """
 }
 
-process TEST_BIN_SCRIPT {
-    /*
-    Runs a script from the bin/ directory
-    */
-
-    output:
-        path("*.txt")
-
-    """
-    bash run.sh
-    """
-}
-
 process TEST_STAGE_REMOTE {
     /*
     Stages a file from a remote file to the worker node.
