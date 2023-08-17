@@ -159,13 +159,6 @@ workflow {
 
     remote_file = params.remoteFile ? Channel.fromPath(params.remoteFile) : Channel.empty()
 
-process sayHello {
-
-  script:
-  """
-  echo 'Hello, World!'
-  """
-}
 
 
     // Run tests
@@ -179,5 +172,4 @@ process sayHello {
     TEST_PUBLISH_FILE()
     TEST_PUBLISH_FOLDER()
     TEST_IGNORED_FAIL()
-    sayHello()
 }
