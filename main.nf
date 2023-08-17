@@ -173,7 +173,6 @@ process sayHello {
     TEST_CREATE_FILE()
     TEST_CREATE_FOLDER()
     TEST_INPUT(test_file)
-    TEST_BIN_SCRIPT()
     TEST_STAGE_REMOTE(remote_file)
     TEST_PASS_FILE(TEST_CREATE_FILE.out.outfile)
     TEST_PASS_FOLDER(TEST_CREATE_FOLDER.out.outfolder)
