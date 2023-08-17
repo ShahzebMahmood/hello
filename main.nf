@@ -59,7 +59,7 @@ process TEST_BIN_SCRIPT {
     */
 
     output:
-        path("*.txt")
+        path("bin/run.txt")
 
     """
     bash run.sh
