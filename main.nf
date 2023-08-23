@@ -16,3 +16,7 @@ process hello {
 workflow {
     hello(params.myVar)
 }
+
+workflow {
+    hello(params.myVar)
+}
