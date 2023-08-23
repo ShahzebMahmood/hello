@@ -1,22 +1,18 @@
-process hello {
+#!/usr/bin/env nextflow
+nextflow.enable.dsl=2 
+
+process sayHello {
     cpus params.cpu - 5 // make cpu count 'dynamic' on the run
-    input:
-        val my_var
-    output:
-        stdout
-        val proc_var, emit: out_var
-    debug true
-    script:
-        proc_var = "proc_var-${my_var}"
+  input: 
+    val x
+  output:
+    stdout
+  script:
     """
-    echo "Hello ${proc_var}"
+    echo '$x world!'
     """
 }
 
 workflow {
-    hello(params.myVar)
-}
-
-workflow {
-    hello(params.myVar)
+  Channel.of('Bonjour', 'Ciao', 'Hello', 'Hola') | sayHello | view
 }
