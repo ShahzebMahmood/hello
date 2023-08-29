@@ -1,4 +1,30 @@
-Test file 
+params.myfile = 's3://nf-nvirginia/Shaz_test/1gbtestfile'
+testfile = Channel.fromPath(params.myfile)
 
 
-just testibg a few thing
+process Foo {
+  input:
+    path testfile
+    each counter
+
+  output:
+    file "output_${counter}.txt"
+  
+  script:
+    """
+    ls -l ${testfile}
+    echo "Downloaded for $testfile" > "output_${counter}.txt"
+    sleep 5
+    """
+}
+
+workflow {
+  counter = {1..10}
+  Foo(testfile, counter)
+  .view()
+}
+
+
+
+
+
