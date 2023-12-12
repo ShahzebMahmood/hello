@@ -24,8 +24,8 @@ reports:
    bin_depths_summary.tsv:
       display: "TSV file"
 
-   CAPES_S7.log:
-      display: "Log file"
+   CAPES_S7.json:
+      display: "Json file"
 
    execution_trace_2021-07-29_07-12-59.txt:
       display: "TXT file"
